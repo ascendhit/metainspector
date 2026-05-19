@@ -14,15 +14,15 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = MetaInspector::VERSION
 
-  gem.add_dependency 'nokogiri', '~> 1.13'
+  gem.add_dependency 'nokogiri', '~> 1.19.0'
   gem.add_dependency 'faraday', '~> 2.5'
   gem.add_dependency 'faraday-cookie_jar', '~> 0.0'
   gem.add_dependency 'faraday-encoding', '~> 0.0'
   gem.add_dependency 'faraday-follow_redirects', '~> 0.3'
-  gem.add_dependency 'faraday-gzip', '>= 0.1', '< 3.0'
+  gem.add_dependency 'faraday-gzip', '>= 0.1', '< 4.0'
   gem.add_dependency 'faraday-http-cache', '~> 2.5'
   gem.add_dependency 'faraday-retry', '~> 2.0'
-  gem.add_dependency 'addressable', '~> 2.8.4'
+  gem.add_dependency 'addressable', '~> 2.9.0'
   gem.add_dependency 'fastimage', '~> 2.2'
   gem.add_dependency 'nesty', '~> 1.0'
 
@@ -31,8 +31,8 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'awesome_print', '~> 1.9'
   gem.add_development_dependency 'rake', '~> 13.0'
   gem.add_development_dependency 'pry', '~> 0.14'
-  gem.add_development_dependency 'puma', '~> 6.4.0'
+  gem.add_development_dependency 'puma', '~> 8.0.0'
   gem.add_development_dependency 'rubocop', '~> 1.34'
-  gem.add_development_dependency 'resolv', '~> 0.2.2'
-  gem.add_development_dependency 'sinatra', '~> 3.0.6'
+  gem.add_development_dependency 'resolv', '~> 0.7.1'
+  gem.add_development_dependency 'sinatra', '~> 4.2.0'
 end

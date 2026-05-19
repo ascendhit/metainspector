@@ -1,5 +1,24 @@
 # MetaInspector Changelog
 
+## [Changes in 5.17.2](https://github.com/jaimeiniesta/metainspector/compare/v5.17.1...v5.17.2)
+
+* Fix best title and author so empty strings are skipped.
+* Update resolv.
+
+## [Changes in 5.17.1](https://github.com/jaimeiniesta/metainspector/compare/v5.17.0...v5.17.1)
+
+* Upgrade addressable and puma dependencies
+
+## [Changes in 5.17.0](https://github.com/jaimeiniesta/metainspector/compare/v5.16.0...v5.17.0)
+
+* Add support for Ruby 4.0
+* Remove support for Ruby 3.1
+* Several dependencies upgrade
+
+## [Changes in 5.16.0](https://github.com/jaimeiniesta/metainspector/compare/v5.15.0...v5.16.0)
+
+* Upgraded dependencies and supported Ruby versions.
+
 ## [Changes in 5.15.0](https://github.com/jaimeiniesta/metainspector/compare/v5.14.0...v5.15.0)
 
 * Added mechanism to use all available options in the `FollowRedirects` Faraday middleware,

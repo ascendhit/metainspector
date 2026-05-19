@@ -21,24 +21,65 @@ gem 'metainspector'
 
 Supported Ruby versions are defined in [`.circleci/config.yml`](.circleci/config.yml).
 
+## Supporting MetaInspector
+
+MetaInspector has been downloaded more than 3 million times via RubyGems.org and has more than 1K stars on Github.
+
+If you're using MetaInspector, it would be much appreciated if you can give back to the project in order to help ensure its continued development.
+
+### Gold Sponsors
+
+<div style="display: flex; gap: 10px;">
+
+  <a href="https://github.com/sponsors/jaimeiniesta/sponsorships?sponsor=jaimeiniesta&tier_id=507665">
+    <img height="175" src="assets/sponsor_logo_placeholder.gif" alt="Become a Gold Sponsor">
+  </a>
+
+</div>
+
+### Silver Sponsors
+
+<div style="display: flex; gap: 10px;">
+
+  <a href="https://rocketvalidator.com">
+    <img height="150" src="assets/sponsor_logo_rocket_validator.png" alt="Rocket Validator - accessibility and HTML site-wide validator">
+  </a>
+
+  <a href="https://github.com/sponsors/jaimeiniesta/sponsorships?sponsor=jaimeiniesta&tier_id=63404">
+    <img height="150" src="assets/sponsor_logo_placeholder.gif" alt="Become a Silver Sponsor">
+  </a>
+
+</div>
+
+### Bronze Sponsors
+
+<div style="display: flex; gap: 10px;">
+
+  <a href="https://github.com/sponsors/jaimeiniesta/sponsorships?sponsor=jaimeiniesta&tier_id=63403">
+    <img height="125" src="assets/sponsor_logo_placeholder.gif" alt="Become a Bronze Sponsor">
+  </a>
+
+</div>
+
+
 ## Usage
 
 Initialize a MetaInspector instance for an URL, like this:
 
 ```ruby
-page = MetaInspector.new('http://sitevalidator.com')
+page = MetaInspector.new('https://github.com')
 ```
 
 If you don't include the scheme on the URL, http:// will be used by default:
 
 ```ruby
-page = MetaInspector.new('sitevalidator.com')
+page = MetaInspector.new('github.com')
 ```
 
 You can also include the html which will be used as the document to scrape:
 
 ```ruby
-page = MetaInspector.new("http://sitevalidator.com",
+page = MetaInspector.new("https://github.com",
                          :document => "<html>...</html>")
 ```
 
@@ -62,8 +103,8 @@ page.tracked?            # returns true if the url contains known tracking param
 page.untracked_url       # returns the url with the known tracking parameters removed
 page.untrack!            # removes the known tracking parameters from the url
 page.scheme              # Scheme of the page (http, https)
-page.host                # Hostname of the page (like, sitevalidator.com, without the scheme)
-page.root_url            # Root url (scheme + host, like http://sitevalidator.com/)
+page.host                # Hostname of the page (like, github.com, without the scheme)
+page.root_url            # Root url (scheme + host, like https://github.com/)
 ```
 
 ### Head links
@@ -236,8 +277,8 @@ page.content_type        # content-type returned by the server when the url was 
 You can also access most of the scraped data as a hash:
 
 ```ruby
-page.to_hash    # { "url"   => "http://sitevalidator.com",
-                    "title" => "MarkupValidator :: site-wide markup validation tool", ... }
+page.to_hash    # { "url"   => "https://github.com",
+                    "title" => "GitHub", ... }
 ```
 
 The original document is accessible from:
@@ -366,7 +407,7 @@ MetaInspector.new('https://example.com', faraday_options: { ssl: { verify: false
 MetaInspector will by default raise an exception when trying to parse a non-HTML URL (one that has a content-type different than text/html). You can disable this behaviour with:
 
 ```ruby
-page = MetaInspector.new('sitevalidator.com', :allow_non_html_content => true)
+page = MetaInspector.new('github.com', :allow_non_html_content => true)
 ```
 
 ```ruby
@@ -385,8 +426,8 @@ By default, URLs are normalized using the Addressable gem. For example:
 
 ```ruby
 # Normalization will add a default scheme and a trailing slash...
-page = MetaInspector.new('sitevalidator.com')
-page.url # http://sitevalidator.com/
+page = MetaInspector.new('github.com')
+page.url # https://github.com/
 
 # ...and it will also convert international characters
 page = MetaInspector.new('http://www.詹姆斯.com')
@@ -434,23 +475,14 @@ $ irb
 >> require 'metainspector'
 => true
 
->> page = MetaInspector.new('http://sitevalidator.com')
-=> #<MetaInspector:0x11330c0 @url="http://sitevalidator.com">
+>> page = MetaInspector.new('http://github.com')
+=> #<MetaInspector:0x11330c0 @url="http://github.com">
 
 >> page.title
-=> "MarkupValidator :: site-wide markup validation tool"
+=> "GitHub"
 
 >> page.meta['description']
-=> "Site-wide markup validation tool. Validate the markup of your whole site with just one click."
-
->> page.meta['keywords']
-=> "html, markup, validation, validator, tool, w3c, development, standards, free"
-
->> page.links.size
-=> 15
-
->> page.links[4]
-=> "/plans-and-pricing"
+=> "Join the most widely adopted, AI-powered developer platform where millions of developers, businesses, and the largest open source community build software that advances humanity."
 ```
 
 ## Contributing guidelines
